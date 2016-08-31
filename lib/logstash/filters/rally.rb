@@ -6,18 +6,18 @@ require "logstash/namespace"
 # message field with whatever you specify in the configuration.
 #
 # It is only intended to be used as an example.
-class LogStash::Filters::Cusum < LogStash::Filters::Base
+class LogStash::Filters::Rally < LogStash::Filters::Base
 
   # Setting the config_name here is required. This is how you
   # configure this filter from your Logstash config.
   #
   #   filter {
-  #    cusum {
+  #    rally {
   #       cusum_field => [fieldname]
   #     }
   #   }
   #
-  config_name "cusum"
+  config_name "rally"
 
   # Replace the message with this value.
   config :cusum_field, :validate => :array
@@ -70,4 +70,4 @@ class LogStash::Filters::Cusum < LogStash::Filters::Base
     end # end  @cusum_field.each do    
   end # end cusum_field(event)
   
-end # class LogStash::Filters::Cusum
+end # class LogStash::Filters::Rally
