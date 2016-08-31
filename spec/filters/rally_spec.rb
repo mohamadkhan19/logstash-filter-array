@@ -6,15 +6,11 @@ describe LogStash::Filters::Example do
   describe "Set to Hello World" do
     let(:config) do <<-CONFIG
       filter {
-        example {
-          message => "Hello World"
+        rally {
+          cusum_field => [fieldname]
         }
       }
     CONFIG
-    end
-
-    sample("message" => "some text") do
-      expect(subject.get("message")).to eq('Hello World')
     end
   end
 end
